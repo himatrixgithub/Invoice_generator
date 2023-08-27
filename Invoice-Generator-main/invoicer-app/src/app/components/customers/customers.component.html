@@ -1,0 +1,23 @@
+<h1 class="page-header">Customers</h1>
+<div class="customers">
+    <table class="table table-striped">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let customer of customers">
+          <td>{{customer.first_name}}</td>
+          <td>{{customer.last_name}}</td>
+          <td>{{customer.email}}</td>
+          <td>{{customer.phone}}</td>
+          <td>
+            <a routerLink="/customer/{{customer._id}}" class="btn btn-success m-2">Details</a>
+            <a routerLink="/customer/edit/{{customer._id}}" class="btn btn-warning m-2">Edit</a>
+            <a href="" (click)="onDeleteClick(customer._id)" class="btn btn-danger m-2">Delete</a>
+          </td>
+        </tr>
+    </table>
+</div>
